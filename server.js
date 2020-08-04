@@ -4,7 +4,7 @@ const path = require('path');
 const port = process.env.PORT || 8000;
 const server = require('http').Server(app);
 
-app.use(express.static(__dirname, 'dist', {index: false}));
+app.use(express.static(__dirname, 'src', {index: false}));
 
 
 server.listen(port, function() {
