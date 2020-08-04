@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --output-path dist --proxy-config proxy.conf.json"
+    "preinstall": "ng serve --proxy-config proxy.conf.json",
+    "postinstall": "ng build --output-path dist"
   },
   "private": true,
   "dependencies": {
