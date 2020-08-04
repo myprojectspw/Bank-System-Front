@@ -79,28 +79,28 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.http.get('http://pacific-island-75677.herokuapp.com/api/emp', {responseType: 'text'}).subscribe(data=>{
+    this.http.get('https://pacific-island-75677.herokuapp.com/api/emp', {responseType: 'text'}).subscribe(data=>{
       this.time = data as string;
     });
-    this.http.get('http://pacific-island-75677.herokuapp.com/api/emp').subscribe((data:Array<Employee>)=>{
+    this.http.get('https://pacific-island-75677.herokuapp.com/api/emp').subscribe((data:Array<Employee>)=>{
       this.messages = data;
     });
   }
 
   send() {
-    this.http.post('http://pacific-island-75677.herokuapp.com/api/emp', this.newMessage).subscribe((data:Array<Employee>)=>{
+    this.http.post('https://pacific-island-75677.herokuapp.com/api/emp', this.newMessage).subscribe((data:Array<Employee>)=>{
       this.messages = data;
     });
   }
 
   update() {
-    this.http.put('http://pacific-island-75677.herokuapp.com/api/emp/' + this.newMessage.id, this.newMessage).subscribe((data:Array<Employee>)=>{
+    this.http.put('https://pacific-island-75677.herokuapp.com/api/emp/' + this.newMessage.id, this.newMessage).subscribe((data:Array<Employee>)=>{
       this.messages = data;
     });
   }
 
   delete() {
-    this.http.delete('http://pacific-island-75677.herokuapp.com/api/emp/' + this.newMessage.id).subscribe((data:Array<Employee>)=>{
+    this.http.delete('https://pacific-island-75677.herokuapp.com/api/emp/' + this.newMessage.id).subscribe((data:Array<Employee>)=>{
       this.messages = data;
     });
 
