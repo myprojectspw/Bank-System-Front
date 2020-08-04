@@ -4,13 +4,13 @@ const app = express();
 const path = require('path');
 
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/src'));
 
 app.listen(process.env.PORT || 8080);
 
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + './project/dist/index.html'));
+  res.sendFile(path.join(__dirname + './project/src/index.html'));
 });
 
 console.log('Console listening!');
