@@ -1,16 +1,22 @@
-// server.js
 const express = require('express');
 const app = express();
 const path = require('path');
+const port = process.env.PORT || 8000;
+const server = require('http').Server(app);
+
+app.use(express.static(__dirname, 'dist', {index: false}));
 
 
-app.use(express.static(__dirname + '/src'));
+server.listen(port, function() {
+    console.log("App running on port " + port);
+})
 
-app.listen(process.env.PORT || 8080);
+// PathLocationStrategy
 
-
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + './project/src/index.html'));
+app.get('', function(req, res) {
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
 });
 
-console.log('Console listening!');
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
+});
