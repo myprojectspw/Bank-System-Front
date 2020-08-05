@@ -6,7 +6,7 @@ const path = require('path');
 const cors = require('cors');
 
 // add this code
-const whitelist = ['https://pacific-island-75677.herokuapp.com']; // list of allow domain
+const whitelist = ['https://thawing-river-01959.herokuapp.com']; // list of allow domain
 
 const corsOptions = {
     origin: function (origin, callback) {
