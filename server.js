@@ -3,29 +3,6 @@ const express = require('express');
 var proxy = require('express-http-proxy');
 const app = express();
 const path = require('path');
-const cors = require('cors');
-
-// add this code
-const whitelist = ['https://thawing-river-01959.herokuapp.com']; // list of allow domain
-
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (!origin) {
-            return callback(null, true);
-        }
-
-        if (whitelist.indexOf(origin) === -1) {
-            var msg = 'The CORS policy for this site does not ' +
-                'allow access from the specified Origin.';
-            return callback(new Error(msg), false);
-        }
-        return callback(null, true);
-    }
-}
-
-// end 
-app.use(cors(corsOptions));
-
 
 
 //dist directory creates on heroku so you would get it here
